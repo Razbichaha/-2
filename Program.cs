@@ -20,9 +20,9 @@ namespace Конвертер_валют
                 userMoney[i]=randomAmountMoney.Next(startRandom, stopRandom);
             }
 
-            bool flagStopProgram = true;
+            bool stopCicle = true;
 
-            while (flagStopProgram)
+            while (stopCicle)
             {
                 Console.Clear();
                 Console.WriteLine("Ваш баланс");
@@ -38,13 +38,13 @@ namespace Конвертер_валют
                     Console.WriteLine(nameMoney[i] + " - " + (i + 1)+" " + courseMoney[i]);
                 }
                 Console.Write("Вы хотите провести обмен? ДА нажмите Enter, НЕТ нажмите N, Для выхода наберите exit ");
-                string signalKey = Console.ReadLine();
+                string signalKey = Console.ReadLine().ToLower();
 
-                if (signalKey == "N" || signalKey == "n" || signalKey == "Т" || signalKey == "т")
+                if (signalKey == "n" || signalKey == "т")
                 {}
                 else if (signalKey == "exit") 
                 {
-                    flagStopProgram = false; 
+                    stopCicle = false; 
                 }
                 else
                 {
